@@ -31,7 +31,8 @@ public class DailyAdviceServer {
                 String advice = getAdvice();
                 PrintWriter writer = new PrintWriter(socket.getOutputStream());
                 writer.println(advice);
-                writer.close();
+                //writer.close();
+                writer.flush();
                 System.out.println(advice);
             }
         } catch (IOException e) {

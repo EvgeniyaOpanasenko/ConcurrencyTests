@@ -20,7 +20,8 @@ public class DailyAdviceClient {
         try {
             Socket clientSocket = new Socket("192.168.0.106", 5050);
 
-            InputStreamReader streamReader = new InputStreamReader(clientSocket.getInputStream());
+            InputStreamReader streamReader =
+                    new InputStreamReader(clientSocket.getInputStream());
             BufferedReader reader = new BufferedReader(streamReader);
 
             String advice = reader.readLine();
