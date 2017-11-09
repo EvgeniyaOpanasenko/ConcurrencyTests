@@ -14,11 +14,11 @@ public class ChatServer {
 
     private static final int DEFAULT_PORT_NUMBER = 5050;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         new ChatServer().go();
     }
 
-    private void go() throws IOException {
+    private void go() throws IOException, InterruptedException {
 
         ServerSocket defaultSocket = new ServerSocket(DEFAULT_PORT_NUMBER);
 
@@ -30,6 +30,7 @@ public class ChatServer {
         if (!(msg.equals("EXIT"))){
             msg = fromClient.readLine();
             System.out.println("Received: " + msg);
+            //Thread.sleep(20000);
         } else {
             fromClient.close();
             connectionSocket.close();

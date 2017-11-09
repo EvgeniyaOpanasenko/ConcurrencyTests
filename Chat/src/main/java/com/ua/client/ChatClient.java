@@ -15,11 +15,11 @@ public class ChatClient {
     private InputStreamReader streamReader;
     private BufferedReader reader;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         new ChatClient().go();
     }
 
-    private void go() {
+    private void go() throws InterruptedException {
 
         try {
             Socket socket = new Socket("192.168.0.106", 5050);
@@ -33,8 +33,9 @@ public class ChatClient {
             PrintWriter writer = new PrintWriter(socket.getOutputStream());
             writer.println(out);
             writer.flush();
+            Thread.sleep(1000);
             //writer.close();
-            socket.close();
+            //socket.close();
 
         } catch (IOException e) {
             e.printStackTrace();
