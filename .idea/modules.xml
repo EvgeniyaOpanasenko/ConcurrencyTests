@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Heritanse/Bank/Bank.iml" filepath="$PROJECT_DIR$/../Heritanse/Bank/Bank.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Heritanse/Chat/Chat.iml" filepath="$PROJECT_DIR$/../Heritanse/Chat/Chat.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Heritanse/ConcurrencyTest.iml" filepath="$PROJECT_DIR$/../Heritanse/ConcurrencyTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Heritanse/DailyAdvice/DailyAdvice.iml" filepath="$PROJECT_DIR$/../Heritanse/DailyAdvice/DailyAdvice.iml" />

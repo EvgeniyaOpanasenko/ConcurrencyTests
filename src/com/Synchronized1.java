@@ -11,8 +11,6 @@ public class Synchronized1 {
 
     private static final int NUM_INCREMENTS = 10;
 
-    private static final Object countLock = new Object();
-
     private static volatile int count = 0;
 
     public static void main(String[] args) {
@@ -22,7 +20,7 @@ public class Synchronized1 {
 
     private static void testSyncIncrement() {
 
-        ExecutorService executor = Executors.newFixedThreadPool(2);
+        ExecutorService executor = Executors.newFixedThreadPool(20);
 
         IntStream.range(0, NUM_INCREMENTS)
                 .forEach(i -> executor.submit(Synchronized1::incrementSync));
@@ -33,7 +31,7 @@ public class Synchronized1 {
 
     private static void testNonSyncIncrement() {
 
-        ExecutorService executor = Executors.newFixedThreadPool(2);
+        ExecutorService executor = Executors.newFixedThreadPool(20);
 
         IntStream.range(0, NUM_INCREMENTS)
                 .forEach(i -> executor.submit(Synchronized1::increment));
@@ -43,18 +41,13 @@ public class Synchronized1 {
         System.out.println("NonSync: " + count);
     }
 
-    private static synchronized void incrementSync() {
-
-        //count = count + 1;
-        synchronized(Synchronized1.class)
-        {
-            count++;
-        }
+    private static void incrementSync() {
+        int i = count;
+        count = i + 1;
     }
 
     private static void increment() {
        count = count + 1;
-
     }
 
 }

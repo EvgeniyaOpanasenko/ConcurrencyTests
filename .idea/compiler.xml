@@ -16,10 +16,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Bank" />
+        <module name="Chat" />
         <module name="DailyAdvice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Bank" target="1.5" />
+      <module name="Chat" target="1.5" />
       <module name="DailyAdvice" target="1.5" />
     </bytecodeTargetLevel>
   </component>
